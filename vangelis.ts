@@ -4,12 +4,7 @@ function dfs(adj: MatrizAdyacente, v: number, padre: number | null, ) {
 	console.log(`Vertice ${v}`)
 
 	visitados.add(v);
-	const vecinos = adj[v];
-
-	if(vecinos === undefined) {
-		console.log(`El vertice ${v} no tiene vecinos definidos`);
-		return;
-	}
+	const vecinos = adj[v] || [];
 
 	for (const u of vecinos) {
 		// console.log(`El vertice u '${u}' viene de v '${v}'`)
@@ -23,7 +18,6 @@ function dfs(adj: MatrizAdyacente, v: number, padre: number | null, ) {
 	}
 
 	return false;
-
 }
 
 // matriz de adjacencia
